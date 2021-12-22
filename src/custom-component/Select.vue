@@ -1,7 +1,7 @@
 <template>
     <div>
-        <el-select 
-            v-model="propsValue.value" 
+        <el-select
+            v-model="propsValue.value"
             :placeholder="propsValue.placeholder"
             @change="events.change"
             @clear="events.clear"
@@ -77,19 +77,7 @@ export default {
                 'allow-create':false,
             }
         },
-        style: {
-            type: Object,
-            default: () => {
-                return {
-                    left: '',
-                    right: '',
-                    top: '',
-                    bottom: '',
-                    width:'',
-                    height:'',
-                };
-            }
-        },
+
         events: {
             type: Object,
             default: () => {

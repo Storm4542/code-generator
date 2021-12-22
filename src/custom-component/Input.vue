@@ -13,7 +13,7 @@
             @input="events.input"
         ></el-input>
     </div>
-  
+
 </template>
 
 <script>
@@ -41,19 +41,6 @@ export default {
         'show-word-limit': false
 
       }
-    },
-    style: {
-        type: Object,
-        default: () => {
-            return {
-                left: '',
-                right: '',
-                top: '',
-                bottom: '',
-                width:'',
-                height:'',
-            };
-        }
     },
     events: {
       type: Object,

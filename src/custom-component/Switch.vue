@@ -33,25 +33,13 @@ export default {
                 width:40,
             }
         },
-        style: {
-            type: Object,
-            default: () => {
-                return {
-                    left: '',
-                    right: '',
-                    top: '',
-                    bottom: '',
-                    width:'',
-                    height:'',
-                };
-            }
-        },
+
         events: {
             type: Object,
             default: () => {
                 return {
                     change: () => {console.log('默认change');},
-                    
+
                 };
             }
         }

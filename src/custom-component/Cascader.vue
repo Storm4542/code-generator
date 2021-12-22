@@ -242,19 +242,7 @@ export default {
               debounce:300,
             }
         },
-        style: {
-            type: Object,
-            default: () => {
-                return {
-                    left: '',
-                    right: '',
-                    top: '',
-                    bottom: '',
-                    width:'',
-                    height:'',
-                };
-            }
-        },
+
         events: {
             type: Object,
             default: () => {

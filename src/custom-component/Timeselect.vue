@@ -44,19 +44,7 @@ export default {
                 'range-separator':'-',
             }
         },
-        style: {
-            type: Object,
-            default: () => {
-                return {
-                    left: '',
-                    right: '',
-                    top: '',
-                    bottom: '',
-                    width:'',
-                    height:'',
-                };
-            }
-        },
+
         events: {
             type: Object,
             default: () => {

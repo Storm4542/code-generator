@@ -33,23 +33,11 @@ export default {
                 'end-placeholder':'结束日期',
                 format:'yyyy-MM-dd',
                 align:"left",
-                
+
             }
-            
+
         },
-        style: {
-            type: Object,
-            default: () => {
-                return {
-                    left: '',
-                    right: '',
-                    top: '',
-                    bottom: '',
-                    width:'',
-                    height:'',
-                };
-            }
-        },
+
     }
 }
 </script>

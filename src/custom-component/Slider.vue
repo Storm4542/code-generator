@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-slider 
+        <el-slider
             v-model="propsValue.value"
             :min="propsValue.min"
             :max="propsValue.max"
@@ -51,19 +51,7 @@ export default {
                 'tooltip-class':''
             }
         },
-        style: {
-            type: Object,
-            default: () => {
-                return {
-                    left: '',
-                    right: '',
-                    top: '',
-                    bottom: '',
-                    width:'',
-                    height:'',
-                };
-            }
-        },
+
         events: {
             type: Object,
             default: () => {
