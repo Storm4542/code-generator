@@ -17,29 +17,34 @@ const list = [
         name: 'Input',
         id: '1',
         propsValue: {
-            value: '',
-            placeholder: '占位',
+            value: '文本框',
+            placeholder: '占位符',
+            //禁用
             disabled: false,
+            //控制缩放
             resize: 'none',
+            // 输入框关联的文字
             label: '名称',
+            // 类型
             type: 'text',
-            clearable: false,
+            //是否可清空
+            clearable: true,
+            //输入框尺寸
             size: 'medium',
-            'show-word-limit': true
+            //输入字数统计
+            'show-word-limit': false
         },
         style: {
-            width: 200,
-            height: 22,
-            fontSize: 14,
-            fontWeight: 500,
-            lineHeight: '',
-            letterSpacing: 0,
-            textAlign: '',
-            color: '',
+            left: '',
+            right: '',
+            top: '',
+            bottom: '',
+            width:'',
+            height:'',
         },
         events: {
-            input: (value) => {console.log(`input:正在输入${value}`);},
-            change: (value) => {console.log(`change:正在输入${value}`);},
+            change: () => {console.log('默认change');},
+            input: () => {console.log('默认input');},
 
         }
     },

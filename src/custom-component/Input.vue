@@ -6,8 +6,6 @@
             :resize="propsValue.resize"
             :label="propsValue.label"
             :type="propsValue.type"
-            :style="{...styles,...position}"
-            style="position: absolute"
             :clearable="propsValue.clearable"
             :size="propsValue.size"
             :show-word-limit="propsValue['show-word-limit']"
@@ -45,17 +43,17 @@ export default {
       }
     },
     style: {
-      type: Object,
-      default: () => {
-          return {
-              left: '',
-              right: '',
-              top: '',
-              bottom: '',
-              width:'',
-              height:'',
-          };
-      }
+        type: Object,
+        default: () => {
+            return {
+                left: '',
+                right: '',
+                top: '',
+                bottom: '',
+                width:'',
+                height:'',
+            };
+        }
     },
     events: {
       type: Object,
