@@ -1,9 +1,9 @@
 <template>
-    <div >
+    <div>
         <el-checkbox-group v-model="propsValue.value" :min="propsValue.min" :max="propsValue.max">
-            <el-checkbox
-            @change="events.change"
-            v-for="(item,index) in propsValue.checkElements"
+            <el-checkbox 
+            @change="events.change" 
+            v-for="(item,index) in propsValue.checkElements" 
             :key="index"
             :disabled="item.disabled"
             :border="item.border"
@@ -18,23 +18,23 @@ export default {
     props:{
         propsValue:{
             type:Object,
-            value:[],
-            checkElements:[],
-            min:1,
-            max:1,
+            default:{
+                value:[],
+                checkElements:[],
+                min:1,
+                max:1,
+            }
         },
-        styles: {
-            type: Object,
-            default: () => {return {};}
-        },
-        position: {
+        style: {
             type: Object,
             default: () => {
                 return {
-                left: '',
-                right: '',
-                top: '',
-                bottom: ''
+                    left: '',
+                    right: '',
+                    top: '',
+                    bottom: '',
+                    width:'',
+                    height:'',
                 };
             }
         },

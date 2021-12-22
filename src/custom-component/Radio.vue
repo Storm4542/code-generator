@@ -1,10 +1,10 @@
 <template>
-    <div >
-        <el-radio-group
-        @change="events.change"
+    <div>
+        <el-radio-group 
+        @change="events.change" 
         v-model="propsValue.value">
-            <el-radio
-            v-for="(item,index) in propsValue.radioElements"
+            <el-radio 
+            v-for="(item,index) in propsValue.radioElements" 
             :label="item.label"
             :disabled="item.disabled"
             :border="item.border"
@@ -19,21 +19,21 @@ export default {
     props:{
         propsValue:{
             type:Object,
-            value:'1',
-            radioElements:[],
+            default:{
+                value:'1',
+                radioElements:[],
+            }
         },
-        styles: {
-            type: Object,
-            default: () => {return {};}
-        },
-        position: {
+        style: {
             type: Object,
             default: () => {
                 return {
-                left: '',
-                right: '',
-                top: '',
-                bottom: ''
+                    left: '',
+                    right: '',
+                    top: '',
+                    bottom: '',
+                    width:'',
+                    height:'',
                 };
             }
         },

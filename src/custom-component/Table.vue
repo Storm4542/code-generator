@@ -1,14 +1,13 @@
 <template>
-  <div style="width: 100%">
-    <el-table
-        :data="propsValue.data"
-        style="width: 100%">
+  <div>
+    <el-table :data="propsValue.data" style="width: 100%">
       <el-table-column
-          v-for="(column,index) in propsValue.columnData"
-          :key="index"
-          :prop="column.prop"
-          :label="column.label"
-          :width="column.width?column.width:'auto'">
+        v-for="(column, index) in propsValue.columnData"
+        :key="index"
+        :prop="column.prop"
+        :label="column.label"
+        :width="column.width ? column.width : 'auto'"
+      >
       </el-table-column>
     </el-table>
   </div>
@@ -22,28 +21,24 @@ export default {
       type: Object,
       default: {
         data: [],
-        columnData: []
-      }
+        columnData: [],
+      },
     },
-    styles: {
-      type: Object,
-      default: () => {return {};}
-    },
-    position: {
+    style: {
       type: Object,
       default: () => {
         return {
-          left: '',
-          right: '',
-          top: '',
-          bottom: ''
+          left: "",
+          right: "",
+          top: "",
+          bottom: "",
+          width: "",
+          height: "",
         };
-      }
+      },
     },
-  }
+  },
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

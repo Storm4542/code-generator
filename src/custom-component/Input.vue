@@ -1,18 +1,21 @@
 <template>
-  <el-input v-model="propsValue.value"
+    <div>
+        <el-input v-model="propsValue.value"
             :placeholder="propsValue.placeholder"
             :disabled="propsValue.disabled"
             :resize="propsValue.resize"
             :label="propsValue.label"
             :type="propsValue.type"
-            :style="{...styles}"
-            style="width: 100%"
+            :style="{...styles,...position}"
+            style="position: absolute"
             :clearable="propsValue.clearable"
             :size="propsValue.size"
             :show-word-limit="propsValue['show-word-limit']"
             @change="events.change"
             @input="events.input"
-  ></el-input>
+        ></el-input>
+    </div>
+  
 </template>
 
 <script>
@@ -41,21 +44,17 @@ export default {
 
       }
     },
-    styles: {
-      type: Object,
-      default: {
-        width: '200px',
-      }
-    },
-    position: {
+    style: {
       type: Object,
       default: () => {
-        return {
-          left: '',
-          right: '',
-          top: '',
-          bottom: ''
-        };
+          return {
+              left: '',
+              right: '',
+              top: '',
+              bottom: '',
+              width:'',
+              height:'',
+          };
       }
     },
     events: {
@@ -69,8 +68,7 @@ export default {
     }
   },
   mounted() {
-      console.log('input初始化');
-      console.log(JSON.stringify(this.events));
+    console.log(JSON.stringify(this.events));
   }
 };
 </script>

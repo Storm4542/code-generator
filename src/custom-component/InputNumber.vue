@@ -1,8 +1,8 @@
 <template>
-    <div >
+    <div>
         <el-input-number
-        v-model="propsValue.value"
-        @change="events.change"
+        v-model="propsValue.value" 
+        @change="events.change" 
         :min="propsValue.min"
         :max="propsValue.max"
         :step="propsValue.step"
@@ -21,29 +21,29 @@ export default {
     props:{
         propsValue:{
             type:Object,
-            value:0,
-            min:0,
-            max:10,
-            step:1,
-            'step-strictly':false,
-            size:'large',
-            disabled:false,
-            controls:false,
-            'controls-position':'right',
-            label:'描述'
+            default:{
+                value:0,
+                min:0,
+                max:10,
+                step:1,
+                'step-strictly':false,
+                size:'large',
+                disabled:false,
+                controls:false,
+                'controls-position':'right',
+                label:'描述'
+            }
         },
-        styles: {
-            type: Object,
-            default: () => {return {};}
-        },
-        position: {
+        style: {
             type: Object,
             default: () => {
                 return {
-                left: '',
-                right: '',
-                top: '',
-                bottom: ''
+                    left: '',
+                    right: '',
+                    top: '',
+                    bottom: '',
+                    width:'',
+                    height:'',
                 };
             }
         },
