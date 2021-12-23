@@ -8,7 +8,7 @@
             :editable="propsValue.editable"
             :clearable="propsValue.clearable"
             :size="propsValue.size"
-            :start-placeholder="propsValue['start-placeholder']"
+            :start-placeholder="propsValue.startPlaceholder"
             :end-placeholder="propsValue['end-placeholder']"
             :format="propsValue.format"
             :align="propsValue.align"
@@ -19,40 +19,40 @@
             :name="propsValue.name"
             :unlink-panels="propsValue['unlink-panels']"
             :validate-event="propsValue['validate-event']"
-            >
+        >
         </el-date-picker>
     </div>
 </template>
 <script>
 export default {
-    name:"Datepicker",
-    props:{
-        propsValue:{
-            type:Object,
-            default:{
-                value:'',
-                type:'date',
-                placeholder:'选择日期',
-                readonly:false,
-                disabled:false,
-                editable:true,
-                clearable:true,
-                size:"",
-                'start-placeholder':'开始日期',
-                'end-placeholder':'结束日期',
-                format:'yyyy-MM-dd',
-                align:"left",
-                'popper-class':'',
-                'picker-options':{},
-                'range-separator':'-',
-                'default-value':new Date(),
-                name:"",
-                'unlink-panels':false,
-                'validate-event':true
+    name: "Datepicker",
+    props: {
+        propsValue: {
+            type: Object,
+            default: {
+                value: '',
+                type: 'date',
+                placeholder: '选择日期',
+                readonly: false,
+                disabled: false,
+                editable: true,
+                clearable: true,
+                size: "",
+                startPlaceholder: '开始日期',
+                'end-placeholder': '结束日期',
+                format: 'yyyy-MM-dd',
+                align: "left",
+                'popper-class': '',
+                'picker-options': {},
+                'range-separator': '-',
+                'default-value': new Date(),
+                name: "",
+                'unlink-panels': false,
+                'validate-event': true
             }
 
         },
-        events:{
+        events: {
             type: Object,
             default: () => {
                 return {
@@ -63,5 +63,5 @@ export default {
             }
         }
     }
-}
+};
 </script>

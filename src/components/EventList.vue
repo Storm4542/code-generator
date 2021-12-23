@@ -99,8 +99,7 @@ export default {
         .el-tag {
             display: block;
             width: 50%;
-            margin: auto;
-            margin-bottom: 10px;
+            margin: auto auto 10px;
         }
     }
 }
