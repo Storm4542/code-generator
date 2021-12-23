@@ -703,10 +703,24 @@ const list = [
             backgroundColor: '',
         },
     },
-    {
+    {   
+        name: 'EButton',
         component: 'e-button',
         label: 'E按钮',
-        propValue: 'E按钮',
+        propsValue:{
+            type:"primary ",
+            value:"按钮",
+            size:"",
+            plain:false,
+            round:false,
+            circle:false,
+            loading:false,
+            disabled:false,
+            icon:"",
+            autofocus:false,
+            nativeType:"button"
+        },
+        // propValue: 'E按钮',
         icon: 'button',
         style: {
             width: 100,
@@ -722,6 +736,9 @@ const list = [
             color: '',
             backgroundColor: '',
         },
+        events: {
+            click: () => {console.log('默认click');},
+        }
     },
     {
         component: 'Picture',
