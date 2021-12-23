@@ -8,17 +8,17 @@
             :editable="propsValue.editable"
             :clearable="propsValue.clearable"
             :size="propsValue.size"
-            :start-placeholder="propsValue['start-placeholder']"
-            :end-placeholder="propsValue['end-placeholder']"
+            :start-placeholder="propsValue.startPlaceholder"
+            :end-placeholder="propsValue.endPlaceholder"
             :format="propsValue.format"
             :align="propsValue.align"
-            :popper-class="propsValue['popper-class']"
-            :picker-options="propsValue['picker-options']"
-            :range-separator="propsValue['range-separator']"
-            :default-value="propsValue['default-value']"
+            :popper-class="propsValue.popperClass"
+            :picker-options="propsValue.pickerOptions"
+            :range-separator="propsValue.rangeSeparator"
+            :default-value="propsValue.defaultValue"
             :name="propsValue.name"
-            :unlink-panels="propsValue['unlink-panels']"
-            :validate-event="propsValue['validate-event']"
+            :unlink-panels="propsValue.unlinkPanels"
+            :validate-event="propsValue.validateEvent"
             >
         </el-date-picker>
     </div>
@@ -38,17 +38,17 @@ export default {
                 editable:true,
                 clearable:true,
                 size:"",
-                'start-placeholder':'开始日期',
-                'end-placeholder':'结束日期',
+                startPlaceholder:'开始日期',
+                endPlaceholder:'结束日期',
                 format:'yyyy-MM-dd',
                 align:"left",
-                'popper-class':'',
-                'picker-options':{},
-                'range-separator':'-',
-                'default-value':new Date(),
+                popperClass:'',
+                pickerOptions:{},
+                rangeSeparator:'-',
+                defaultValue:new Date(),
                 name:"",
-                'unlink-panels':false,
-                'validate-event':true
+                unlinkPanels:false,
+                validateEvent:true
             }
 
         },

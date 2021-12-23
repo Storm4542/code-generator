@@ -12,15 +12,15 @@
             :size="propsValue.size"
             :disabled="propsValue.disabled"
             :clearable="propsValue.clearable"
-            :multiple-limit="propsValue['multiple-limit']"
+            :multiple-limit="propsValue.multipleLimit"
             :autocomplete="propsValue.autocomplete"
             :filterable="propsValue.filterable"
-            :filter-method="propsValue['filter-method']"
-            :allow-create="propsValue['allow-create']"
-            :remote-method="propsValue['remote-method']"
+            :filter-method="propsValue.filterMethod"
+            :allow-create="propsValue.allowCreate"
+            :remote-method="propsValue.remoteMethod"
             :remote="propsValue.remote"
             :loading="propsValue.loading"
-            :loading-text="propsValue['loading-text']"
+            :loading-text="propsValue.loadingText"
             >
             <el-option
             v-for="(item,index) in propsValue.options"
@@ -60,21 +60,21 @@ export default {
                 multiple:false,
                 disabled:false,
                 clearable:true,
-                'multiple-limit':0,
+                multipleLimit:0,
                 autocomplete:'off',
                 placeholder:'请选择',
                 filterable:false,
-                'filter-method':function (params) {
+                filterMethod:function (params) {
                     console.log(params);
                 },
                 remote:false,
-                'remote-method':function (params) {
+                remoteMethod:function (params) {
                     console.log(params);
                 },
                 loading:false,
-                'loading-text':'加载中',
+                loadingText:'加载中',
                 size:'small',
-                'allow-create':false,
+                allowCreate:false,
             }
         },
 

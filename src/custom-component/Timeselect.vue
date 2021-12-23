@@ -2,7 +2,7 @@
     <div>
         <el-time-select
             v-model="propsValue.value"
-            :picker-options="propsValue['picker-options']"
+            :picker-options="propsValue.pickerOptions"
             :readonly="propsValue.readonly"
             :disabled="propsValue.disabled"
             :editable="propsValue.editable"
@@ -10,8 +10,8 @@
             :size="propsValue.size"
             :placeholder="propsValue.placeholder"
             :align="propsValue.align"
-            :popper-class="propsValue['popper-class']"
-            :range-separator="propsValue['range-separator']"
+            :popper-class="propsValue.popperClass"
+            :range-separator="propsValue.rangeSeparator"
             @change="events.change"
             @blur="events.blur"
             @focus="events.focus"
@@ -27,7 +27,7 @@ export default {
             type:Object,
             default:{
                 value:'',
-                'picker-options':{
+                pickerOptions:{
                     start: '08:30',
                     step: '00:15',
                     end: '18:30',
@@ -40,8 +40,8 @@ export default {
                 size:'small',
                 placeholder:'请选择',
                 align:"center",
-                'popper-class':'',
-                'range-separator':'-',
+                popperClass:'',
+                rangeSeparator:'-',
             }
         },
 

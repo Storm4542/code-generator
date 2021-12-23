@@ -2,7 +2,7 @@
     <div>
         <el-time-picker
             v-model="propsValue.value"
-            :picker-options="propsValue['picker-options']"
+            :picker-options="propsValue.pickerOptions"
             :placeholder="propsValue.placeholder"
             :readonly="propsValue.readonly"
             :disabled="propsValue.disabled"
@@ -10,14 +10,14 @@
             :clearable="propsValue.clearable"
             :size="propsValue.size"
             :align="propsValue.align"
-            :popper-class="propsValue['popper-class']"
-            :range-separator="propsValue['range-separator']"
-            :start-placeholder="propsValue['start-placeholder']"
-            :end-placeholder="propsValue['end-placeholder']"
-            :is-range="propsValue['is-range']"
-            :arrow-control="propsValue['arrow-control']"
-            :value-format="propsValue['value-format']"
-            :default-value="propsValue['default-value']"
+            :popper-class="propsValue.popperClass"
+            :range-separator="propsValue.rangeSeparator"
+            :start-placeholder="propsValue.startPlaceholder"
+            :end-placeholder="propsValue.endPlaceholder"
+            :is-range="propsValue.isRange"
+            :arrow-control="propsValue.arrowControl"
+            :value-format="propsValue.valueFormat"
+            :default-value="propsValue.defaultValue"
             :format="propsValue.format"
             @change="events.change"
             @blur="events.blur"
@@ -34,7 +34,7 @@ export default {
             type:Object,
             default:{
                 value:'',
-                'picker-options':{
+                pickerOptions:{
                     selectableRange: '18:30:00 - 20:30:00'
                 },
                 readonly:false,
@@ -44,18 +44,17 @@ export default {
                 size:'small',
                 placeholder:'请选择',
                 align:"center",
-                'popper-class':'',
-                'range-separator':'-',
-                'start-placeholder':"开始时间",
-                'end-placeholder':"结束时间",
-                'is-range':false,
-                'arrow-control':false,
-                'value-format':'',
-                'default-value':new Date(),
+                popperClass:'',
+                rangeSeparator:'-',
+                startPlaceholder:"开始时间",
+                endPlaceholder:"结束时间",
+                isRange:false,
+                arrowControl:false,
+                valueFormat:'',
+                defaultValue:new Date(),
                 format:'',
             }
         },
-
         events: {
             type: Object,
             default: () => {

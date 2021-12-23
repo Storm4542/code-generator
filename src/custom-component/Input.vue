@@ -8,7 +8,7 @@
             :type="propsValue.type"
             :clearable="propsValue.clearable"
             :size="propsValue.size"
-            :show-word-limit="propsValue['show-word-limit']"
+            :show-word-limit="propsValue.showWordLimit"
             @change="events.change"
             @input="events.input"
         ></el-input>
@@ -38,7 +38,7 @@ export default {
         //输入框尺寸
         size: 'medium',
         //输入字数统计
-        'show-word-limit': false
+        showWordLimit: false
 
       }
     },

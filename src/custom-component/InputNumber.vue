@@ -6,8 +6,8 @@
             :min="propsValue.min"
             :max="propsValue.max"
             :step="propsValue.step"
-            :step-strictly="propsValue['step-strictly']"
-            :controls-position="propsValue['controls-position']"
+            :step-strictly="propsValue.stepStrictly"
+            :controls-position="propsValue.controlsPosition"
             :label="propsValue.label"
             :size="propsValue.size"
             :disabled="propsValue.disabled"
@@ -26,11 +26,11 @@ export default {
                 min: 0,
                 max: 10,
                 step: 1,
-                'step-strictly': false,
+                stepStrictly: false,
                 size: 'large',
                 disabled: false,
                 controls: false,
-                'controls-position': 'right',
+                controlsPosition: 'right',
                 label: '描述'
             }
         },

@@ -3,14 +3,14 @@
         <el-switch
             v-model="propsValue.value"
             @change="events.change"
-            :active-color="propsValue['active-color']"
-            :inactive-color="propsValue['inactive-color']"
-            :active-text="propsValue['active-text']"
-            :inactive-text="propsValue['inactive-text']"
+            :active-color="propsValue.activeColor"
+            :inactive-color="propsValue.inactiveColor"
+            :active-text="propsValue.activeText"
+            :inactive-text="propsValue.inactiveText"
             :disabled="propsValue.disabled"
             :width="propsValue.width"
-            :active-value="propsValue['active-value']"
-            :inactive-value="propsValue['inactive-value']"
+            :active-value="propsValue.activeValue"
+            :inactive-value="propsValue.inactiveValue"
             >
         </el-switch>
     </div>
@@ -23,17 +23,16 @@ export default {
             type:Object,
             default:{
                 value:true,
-                'active-color':"#13ce66",
-                'inactive-color':"#ff4949",
-                'active-text':'右',
-                'inactive-text':'左',
-                'active-value':"100",
-                'inactive-value':"0",
+                activeColor:"#13ce66",
+                inactiveColor:"#ff4949",
+                activeText:'右',
+                inactiveText:'左',
+                activeValue:"100",
+                inactiveValue:"0",
                 disabled:false,
                 width:40,
             }
         },
-
         events: {
             type: Object,
             default: () => {
