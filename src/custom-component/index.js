@@ -13,6 +13,7 @@ const components = [
     'InputNumber',
     'Select',
     'Cascader',
+    'Switches',
     'Timeselect',
     'Timepicker',
     'Datepicker'

@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-    name: "Switchs",
+    name: "Switches",
     props:{
         propsValue:{
             type:Object,

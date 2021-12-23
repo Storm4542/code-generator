@@ -492,7 +492,7 @@ const list = [
         }
     },
     {
-        name: 'Switchs',
+        name: 'Switches',
         id: '8',
         propsValue: {
             value: true,
