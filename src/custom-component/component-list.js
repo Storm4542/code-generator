@@ -45,7 +45,6 @@ const list = [
         events: {
             change: () => {console.log('默认change');},
             input: () => {console.log('默认input');},
-
         }
     },
     {
@@ -87,15 +86,15 @@ const list = [
                     label: '地址',
                 }
             ],
-
         },
         style: {
-            width: '',
             left: '',
             right: '',
-            top: 150,
-            bottom: ''
-        }
+            top: '',
+            bottom: '',
+            width:'',
+            height:'',
+        },
 
     },
     {
@@ -124,19 +123,16 @@ const list = [
                 }
             ],
         },
-        styles: {
-
-            // todo 源码样式修改高度
-            height: "40px"
-        },
-        position: {
+        style: {
             left: '',
             right: '',
-            top: '100px',
-            bottom: ''
+            top: '',
+            bottom: '',
+            width:'',
+            height:'',
         },
         events: {
-            change: (value) => {console.log(`change:正在输入${value}`);},
+            change: () => {console.log('默认change');},
         }
     },
     {
@@ -167,16 +163,13 @@ const list = [
             min: 0,
             max: 2
         },
-        styles: {
-
-            // todo 源码样式修改高度
-            height: "40px"
-        },
-        position: {
+        style: {
             left: '',
             right: '',
-            top: '400px',
-            bottom: ''
+            top: '',
+            bottom: '',
+            width:'',
+            height:'',
         },
         events: {
             change: (value) => {console.log(`change:正在输入${value}`);},
@@ -197,12 +190,13 @@ const list = [
             'controls-position': '',
             label: '描述'
         },
-        styles: {},
-        position: {
+        style: {
             left: '',
             right: '',
-            top: '450px',
-            bottom: ''
+            top: '',
+            bottom: '',
+            width:'',
+            height:'',
         },
         events: {
             change: (value) => {console.log(`change:正在输入${value}`);},
@@ -250,12 +244,13 @@ const list = [
             'loading-text': '加载中',
             size: 'small',
         },
-        styles: {},
-        position: {
+        style: {
             left: '',
             right: '',
-            top: '500px',
-            bottom: ''
+            top: '',
+            bottom: '',
+            width:'',
+            height:'',
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -480,12 +475,13 @@ const list = [
             size: 'small',
             debounce: 0,
         },
-        styles: {},
-        position: {
+        style: {
             left: '',
             right: '',
-            top: '550px',
-            bottom: ''
+            top: '',
+            bottom: '',
+            width:'',
+            height:'',
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -507,12 +503,13 @@ const list = [
             disabled: false,
             width: 40,
         },
-        styles: {},
-        position: {
+        style: {
             left: '',
             right: '',
-            top: '600px',
-            bottom: ''
+            top: '',
+            bottom: '',
+            width:'',
+            height:'',
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -526,12 +523,13 @@ const list = [
             min: 0,
             max: 100,
         },
-        styles: {},
-        position: {
+        style: {
             left: '',
             right: '',
-            top: '650px',
-            bottom: ''
+            top: '',
+            bottom: '',
+            width:'',
+            height:'',
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
