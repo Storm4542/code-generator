@@ -10,6 +10,15 @@
             :size="propsValue.size"
             :start-placeholder="propsValue['start-placeholder']"
             :end-placeholder="propsValue['end-placeholder']"
+            :format="propsValue.format"
+            :align="propsValue.align"
+            :popper-class="propsValue['popper-class']"
+            :picker-options="propsValue['picker-options']"
+            :range-separator="propsValue['range-separator']"
+            :default-value="propsValue['default-value']"
+            :name="propsValue.name"
+            :unlink-panels="propsValue['unlink-panels']"
+            :validate-event="propsValue['validate-event']"
             >
         </el-date-picker>
     </div>
@@ -33,11 +42,26 @@ export default {
                 'end-placeholder':'结束日期',
                 format:'yyyy-MM-dd',
                 align:"left",
-
+                'popper-class':'',
+                'picker-options':{},
+                'range-separator':'-',
+                'default-value':new Date(),
+                name:"",
+                'unlink-panels':false,
+                'validate-event':true
             }
 
         },
-
+        events:{
+            type: Object,
+            default: () => {
+                return {
+                    change: () => {console.log('默认change');},
+                    blur: () => {console.log('blur');},
+                    focus: () => {console.log('focus');},
+                };
+            }
+        }
     }
 }
 </script>

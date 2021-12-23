@@ -625,6 +625,13 @@ const list = [
             'end-placeholder':'结束日期',
             format:'yyyy-MM-dd',
             align:"left",
+            'popper-class':'',
+            'picker-options':{},
+            'range-separator':'-',
+            'default-value':new Date(),
+            name:"",
+            'unlink-panels':false,
+            'validate-event':true
         },
         style: {
             left: '',
