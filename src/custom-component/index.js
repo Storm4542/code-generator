@@ -13,6 +13,9 @@ const components = [
     'InputNumber',
     'Select',
     'Cascader',
+    'Timeselect',
+    'Timepicker',
+    'Datepicker'
 ]
 
 components.forEach(key => {
