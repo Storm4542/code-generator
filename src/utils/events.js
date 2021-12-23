@@ -1,21 +1,29 @@
 // 编辑器自定义事件
+import {Message} from 'element-ui';
+
 const events = {
     redirect(url) {
         if (url) {
-            window.location.href = url
+            window.location.href = url;
         }
     },
 
     alert(msg) {
         if (msg) {
-            alert(msg)
+            Message.info(msg);
         }
     },
-}
+    click(value) {
+
+    },
+    change(value) {
+
+    }
+};
 
 const mixins = {
     methods: events,
-}
+};
 
 const eventList = [
     {
@@ -29,11 +37,21 @@ const eventList = [
         label: 'alert 事件',
         event: events.alert,
         param: '',
+    }, {
+        key: '点击',
+        label: '点击 事件',
+        event: events.click,
+        param: '',
+    }, {
+        key: 'change',
+        label: 'change 事件',
+        event: events.change,
+        param: '',
     },
-]
+];
 
 export {
     mixins,
     events,
     eventList,
-}
+};

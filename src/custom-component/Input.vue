@@ -13,48 +13,45 @@
             @input="events.input"
         ></el-input>
     </div>
-
 </template>
-
 <script>
 export default {
   name: "Input",
   props: {
     propsValue: {
-      type: Object,
-      default: {
-        value: '文本框',
-        placeholder: '占位符',
-        //禁用
-        disabled: false,
-        //控制缩放
-        resize: 'none',
-        // 输入框关联的文字
-        label: '名称',
-        // 类型
-        type: 'text',
-        //是否可清空
-        clearable: true,
-        //输入框尺寸
-        size: 'medium',
-        //输入字数统计
-        showWordLimit: false
-
-      }
+		type: Object,
+		default: {
+			value: '文本框',
+			placeholder: '占位符',
+			//禁用
+			disabled: false,
+			//控制缩放
+			resize: 'none',
+			// 输入框关联的文字
+			label: '名称',
+			// 类型
+			type: 'text',
+			//是否可清空
+			clearable: true,
+			//输入框尺寸
+			size: 'medium',
+			//输入字数统计
+        	showWordLimit: false
+            }
+        },
+        events: {
+            type: Object,
+            default: () => {
+                return {
+                    change: () => {console.log('默认change');},
+                    input: () => {console.log('默认input');},
+                };
+            }
+        }
     },
-    events: {
-      type: Object,
-      default: () => {
-        return {
-          change: () => {console.log('默认change');},
-          input: () => {console.log('默认input');},
-        };
-      }
+    mounted() {
+        console.log(JSON.stringify(this.events));
     }
-  },
-  mounted() {
-    console.log(JSON.stringify(this.events));
-  }
 };
 </script>
 

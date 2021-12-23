@@ -50,9 +50,8 @@ export default {
                 unlinkPanels:false,
                 validateEvent:true
             }
-
         },
-        events:{
+        events: {
             type: Object,
             default: () => {
                 return {
@@ -63,5 +62,5 @@ export default {
             }
         }
     }
-}
+};
 </script>

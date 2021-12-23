@@ -183,6 +183,7 @@ export default {
         },
 
         save() {
+            console.log(this.componentData);
             localStorage.setItem('canvasData', JSON.stringify(this.componentData))
             localStorage.setItem('canvasStyle', JSON.stringify(this.canvasStyleData))
             this.$message.success('保存成功')
