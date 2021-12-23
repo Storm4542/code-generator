@@ -26,7 +26,7 @@
                 :is="item.name"
                 :styles="item.styles"
                 :propsValue="item.propsValue"
-                @input="handleInput"
+                :events="item.events"
                 :id="'component' + item.id"
             />
 
