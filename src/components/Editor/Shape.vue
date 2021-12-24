@@ -198,16 +198,15 @@ export default {
         },
 
         handleMouseDownOnShape(e) {
-            console.group('handleMouseDownOnShape:start',e);
+            console.group('handleMouseDownOnShape:start', e);
             this.$store.commit('setClickComponentStatus', true);
             // if (this.element.component != 'v-text' && this.element.component != 'rect-shape') {
             //     e.preventDefault();
             // }
 
             e.stopPropagation();
-            this.element.element = e
-            console.log('this.element', this.element);
-            this.$store.commit('setCurComponent', {component: this.element, index: this.index});
+
+            this.$store.commit('setCurComponent', {component: this.element, index: this.index, element: e});
             if (this.element.isLock) return;
 
             this.cursors = this.getCursor(); // 根据旋转角度获取光标位置
@@ -260,6 +259,7 @@ export default {
         },
 
         selectCurComponent(e) {
+            console.log(e);
             // 阻止向父组件冒泡
             e.stopPropagation();
             e.preventDefault();

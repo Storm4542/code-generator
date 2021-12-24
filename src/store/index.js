@@ -35,6 +35,7 @@ const data = {
         // 点击画布时是否点中组件，主要用于取消选中组件用。
         // 如果没点中组件，并且在画布空白处弹起鼠标，则取消当前组件的选中状态
         isClickComponent: false,
+        element: null,  //当前选中的element
     },
     mutations: {
         ...animation.mutations,
@@ -59,9 +60,10 @@ const data = {
             state.canvasStyleData = style;
         },
 
-        setCurComponent(state, {component, index}) {
+        setCurComponent(state, {component, index, element}) {
             state.curComponent = component;
             state.curComponentIndex = index;
+            state.element = element;
         },
 
         setShapeStyle({curComponent}, {top, left, width, height, rotate}) {
