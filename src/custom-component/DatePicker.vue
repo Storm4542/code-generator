@@ -1,50 +1,56 @@
 <template>
     <div>
-        <el-time-select
+        <el-date-picker
             v-model="propsValue.value"
-            :picker-options="propsValue.pickerOptions"
-            :readonly="propsValue.readonly"
+            :type="propsValue.type"
+            :placeholder="propsValue.placeholder"
             :disabled="propsValue.disabled"
             :editable="propsValue.editable"
             :clearable="propsValue.clearable"
             :size="propsValue.size"
-            :placeholder="propsValue.placeholder"
+            :start-placeholder="propsValue.startPlaceholder"
+            :end-placeholder="propsValue.endPlaceholder"
+            :format="propsValue.format"
             :align="propsValue.align"
             :popper-class="propsValue.popperClass"
+            :picker-options="propsValue.pickerOptions"
             :range-separator="propsValue.rangeSeparator"
-            @change="events.change"
-            @blur="events.blur"
-            @focus="events.focus"
+            :default-value="propsValue.defaultValue"
+            :name="propsValue.name"
+            :unlink-panels="propsValue.unlinkPanels"
+            :validate-event="propsValue.validateEvent"
             >
-        </el-time-select>
+        </el-date-picker>
     </div>
 </template>
 <script>
 export default {
-    name:"Timeselect",
+    name:"DatePicker",
     props:{
         propsValue:{
             type:Object,
             default:{
                 value:'',
-                pickerOptions:{
-                    start: '08:30',
-                    step: '00:15',
-                    end: '18:30',
-                    minTime: '',
-                },
+                type:'date',
+                placeholder:'选择日期',
                 readonly:false,
                 disabled:false,
                 editable:true,
                 clearable:true,
-                size:'small',
-                placeholder:'请选择',
-                align:"center",
+                size:"",
+                startPlaceholder:'开始日期',
+                endPlaceholder:'结束日期',
+                format:'yyyy-MM-dd',
+                align:"left",
                 popperClass:'',
+                pickerOptions:{},
                 rangeSeparator:'-',
+                defaultValue:new Date(),
+                name:"",
+                unlinkPanels:false,
+                validateEvent:true
             }
         },
-
         events: {
             type: Object,
             default: () => {
@@ -56,5 +62,5 @@ export default {
             }
         }
     }
-}
+};
 </script>

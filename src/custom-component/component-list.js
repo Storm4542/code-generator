@@ -555,7 +555,7 @@ const list = [
         }
     },
     {
-        name: 'Timeselect',
+        name: 'TimeSelect',
         id: '10',
         propsValue: {
             value:'',
@@ -590,7 +590,7 @@ const list = [
         }
     },
     {
-        name: 'Timepicker',
+        name: 'TimePicker',
         id: '11',
         propsValue: {
             value:'',
@@ -629,10 +629,9 @@ const list = [
         }
     },
     {
-        name: 'Datepicker',
+        name: 'DatePicker',
         id: '12',
         propsValue: {
-            value:'',
             value:'',
             type:'date',
             placeholder:'选择日期',
@@ -703,7 +702,7 @@ const list = [
             backgroundColor: '',
         },
     },
-    {   
+    {
         name: 'EButton',
         component: 'e-button',
         label: 'E按钮',

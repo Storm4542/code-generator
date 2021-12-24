@@ -198,13 +198,14 @@ export default {
         },
 
         handleMouseDownOnShape(e) {
-            console.group('handleMouseDownOnShape:start');
+            console.group('handleMouseDownOnShape:start',e);
             this.$store.commit('setClickComponentStatus', true);
             // if (this.element.component != 'v-text' && this.element.component != 'rect-shape') {
             //     e.preventDefault();
             // }
 
             e.stopPropagation();
+            this.element.element = e
             console.log('this.element', this.element);
             this.$store.commit('setCurComponent', {component: this.element, index: this.index});
             if (this.element.isLock) return;

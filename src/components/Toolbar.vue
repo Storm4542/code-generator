@@ -4,16 +4,19 @@
             <el-button @click="undo">撤消</el-button>
             <el-button @click="redo">重做</el-button>
             <label for="input" class="insert">插入图片</label>
-            <input type="file" @change="handleFileChange" id="input" hidden />
+            <input type="file" @change="handleFileChange" id="input" hidden/>
             <el-button @click="preview" style="margin-left: 10px;">预览</el-button>
             <el-button @click="save">保存</el-button>
             <el-button @click="clearCanvas">清空画布</el-button>
             <el-button @click="compose" :disabled="!areaData.components.length">组合</el-button>
             <el-button @click="decompose"
-            :disabled="!curComponent || curComponent.isLock || curComponent.component != 'Group'">拆分</el-button>
+                       :disabled="!curComponent || curComponent.isLock || curComponent.component != 'Group'">拆分
+            </el-button>
 
             <el-button @click="lock" :disabled="!curComponent || curComponent.isLock">锁定</el-button>
             <el-button @click="unlock" :disabled="!curComponent || !curComponent.isLock">解锁</el-button>
+            <el-button @click="horizontalCenter">水平居中</el-button>
+            <el-button @click="verticalCenter">垂直居中</el-button>
             <div class="canvas-config">
                 <span>画布大小</span>
                 <input v-model="canvasStyleData.width">
@@ -27,21 +30,21 @@
         </div>
 
         <!-- 预览 -->
-        <Preview v-model="isShowPreview" @change="handlePreviewChange" />
+        <Preview v-model="isShowPreview" @change="handlePreviewChange"/>
     </div>
 </template>
 
 <script>
-import generateID from '@/utils/generateID'
-import toast from '@/utils/toast'
-import { mapState } from 'vuex'
-import Preview from '@/components/Editor/Preview'
-import { commonStyle, commonAttr } from '@/custom-component/component-list'
-import eventBus from '@/utils/eventBus'
-import { deepCopy } from '@/utils/utils'
+import generateID from '@/utils/generateID';
+import toast from '@/utils/toast';
+import {mapState} from 'vuex';
+import Preview from '@/components/Editor/Preview';
+import {commonStyle, commonAttr} from '@/custom-component/component-list';
+import eventBus from '@/utils/eventBus';
+import {deepCopy} from '@/utils/utils';
 
 export default {
-    components: { Preview },
+    components: {Preview},
     data() {
         return {
             isShowPreview: false,
@@ -55,7 +58,7 @@ export default {
             ],
             scale: '100%',
             timer: null,
-        }
+        };
     },
     computed: mapState([
         'componentData',
@@ -64,87 +67,94 @@ export default {
         'curComponent',
     ]),
     created() {
-        eventBus.$on('preview', this.preview)
-        eventBus.$on('save', this.save)
-        eventBus.$on('clearCanvas', this.clearCanvas)
+        eventBus.$on('preview', this.preview);
+        eventBus.$on('save', this.save);
+        eventBus.$on('clearCanvas', this.clearCanvas);
 
-        this.scale = this.canvasStyleData.scale
+        this.scale = this.canvasStyleData.scale;
     },
     methods: {
         format(value) {
-            const scale = this.scale
-            return value * parseInt(scale) / 100
+            const scale = this.scale;
+            return value * parseInt(scale) / 100;
         },
 
         getOriginStyle(value) {
-            const scale = this.canvasStyleData.scale
-            const result = value / (parseInt(scale) / 100)
-            return result
+            const scale = this.canvasStyleData.scale;
+            const result = value / (parseInt(scale) / 100);
+            return result;
         },
 
         handleScaleChange() {
-            clearTimeout(this.timer)
+            clearTimeout(this.timer);
             this.timer = setTimeout(() => {
                 // 画布比例设一个最小值，不能为 0
                 // eslint-disable-next-line no-bitwise
-                this.scale = (~~this.scale) || 1
-                const componentData = deepCopy(this.componentData)
+                this.scale = (~~this.scale) || 1;
+                const componentData = deepCopy(this.componentData);
                 componentData.forEach(component => {
                     Object.keys(component.style).forEach(key => {
                         if (this.needToChange.includes(key)) {
                             // 根据原来的比例获取样式原来的尺寸
                             // 再用原来的尺寸 * 现在的比例得出新的尺寸
                             // 不能用 Math.round 防止 1 px 的边框变 0
-                            component.style[key] = Math.ceil(this.format(this.getOriginStyle(component.style[key])))
+                            component.style[key] = Math.ceil(this.format(this.getOriginStyle(component.style[key])));
                         }
-                    })
-                })
+                    });
+                });
 
-                this.$store.commit('setComponentData', componentData)
+                this.$store.commit('setComponentData', componentData);
                 this.$store.commit('setCanvasStyle', {
                     ...this.canvasStyleData,
                     scale: this.scale,
-                })
-            }, 1000)
+                });
+            }, 1000);
         },
-
+        horizontalCenter() {
+            //    水平居中
+            this.$store.commit('horizontalCenter');
+        },
+        verticalCenter() {
+            //    垂直居中
+            this.$store.commit('verticalCenter');
+        },
         lock() {
-            this.$store.commit('lock')
+            this.$store.commit('lock');
         },
 
         unlock() {
-            this.$store.commit('unlock')
+            this.$store.commit('unlock');
         },
 
         compose() {
-            this.$store.commit('compose')
-            this.$store.commit('recordSnapshot')
+            this.$store.commit('compose');
+            this.$store.commit('recordSnapshot');
         },
 
         decompose() {
-            this.$store.commit('decompose')
-            this.$store.commit('recordSnapshot')
+            this.$store.commit('decompose');
+            this.$store.commit('recordSnapshot');
         },
 
         undo() {
-            this.$store.commit('undo')
+            this.$store.commit('undo');
         },
 
         redo() {
-            this.$store.commit('redo')
+            this.$store.commit('redo');
         },
 
         handleFileChange(e) {
-            const file = e.target.files[0]
+            const file = e.target.files[0];
             if (!file.type.includes('image')) {
-                toast('只能插入图片')
-                return
+                toast('只能插入图片');
+                return;
             }
 
-            const reader = new FileReader()
+            const reader = new FileReader();
             reader.onload = (res) => {
-                const fileResult = res.target.result
-                const img = new Image()
+                const fileResult = res.target.result;
+                const img = new Image();
                 img.onload = () => {
                     this.$store.commit('addComponent', {
                         component: {
@@ -162,43 +172,43 @@ export default {
                                 height: img.height,
                             },
                         },
-                    })
+                    });
 
-                    this.$store.commit('recordSnapshot')
+                    this.$store.commit('recordSnapshot');
 
                     // 修复重复上传同一文件，@change 不触发的问题
-                    document.querySelector('#input').setAttribute('type', 'text')
-                    document.querySelector('#input').setAttribute('type', 'file')
-                }
+                    document.querySelector('#input').setAttribute('type', 'text');
+                    document.querySelector('#input').setAttribute('type', 'file');
+                };
 
-                img.src = fileResult
-            }
+                img.src = fileResult;
+            };
 
-            reader.readAsDataURL(file)
+            reader.readAsDataURL(file);
         },
 
         preview() {
-            this.isShowPreview = true
-            this.$store.commit('setEditMode', 'preview')
+            this.isShowPreview = true;
+            this.$store.commit('setEditMode', 'preview');
         },
 
         save() {
             console.log(this.componentData);
-            localStorage.setItem('canvasData', JSON.stringify(this.componentData))
-            localStorage.setItem('canvasStyle', JSON.stringify(this.canvasStyleData))
-            this.$message.success('保存成功')
+            localStorage.setItem('canvasData', JSON.stringify(this.componentData));
+            localStorage.setItem('canvasStyle', JSON.stringify(this.canvasStyleData));
+            this.$message.success('保存成功');
         },
 
         clearCanvas() {
-            this.$store.commit('setComponentData', [])
-            this.$store.commit('recordSnapshot')
+            this.$store.commit('setComponentData', []);
+            this.$store.commit('recordSnapshot');
         },
 
         handlePreviewChange() {
-            this.$store.commit('setEditMode', 'edit')
+            this.$store.commit('setEditMode', 'edit');
         },
     },
-}
+};
 </script>
 
 <style lang="scss" scoped>

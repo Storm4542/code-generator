@@ -23,20 +23,7 @@ export default {
         data: [],
         columnData: [],
       },
-    },
-    style: {
-      type: Object,
-      default: () => {
-        return {
-          left: "",
-          right: "",
-          top: "",
-          bottom: "",
-          width: "",
-          height: "",
-        };
-      },
-    },
+    }
   },
 };
 </script>
