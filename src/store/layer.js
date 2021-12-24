@@ -37,6 +37,6 @@ export default {
             } else {
                 toast('已经到底了')
             }
-        },
+        }
     },
 }

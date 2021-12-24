@@ -28,7 +28,7 @@
 </template>
 <script>
 export default {
-    name:"Timepicker",
+    name:"TimePicker",
     props:{
         propsValue:{
             type:Object,

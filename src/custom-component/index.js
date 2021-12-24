@@ -14,9 +14,9 @@ const components = [
     'Select',
     'Cascader',
     'Switches',
-    'Timeselect',
-    'Timepicker',
-    'Datepicker'
+    'TimeSelect',
+    'TimePicker',
+    'DatePicker'
 ]
 
 components.forEach(key => {

@@ -8,6 +8,7 @@ import event from './event';
 import layer from './layer';
 import snapshot from './snapshot';
 import lock from './lock';
+import position from './position';
 
 Vue.use(Vuex);
 
@@ -44,6 +45,7 @@ const data = {
         ...layer.mutations,
         ...snapshot.mutations,
         ...lock.mutations,
+        ...position.mutations,
 
         setClickComponentStatus(state, status) {
             state.isClickComponent = status;
