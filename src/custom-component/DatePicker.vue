@@ -30,7 +30,7 @@ export default {
         propsValue:{
             type:Object,
             default:{
-                value:new Date(),
+                value:new Date().getTime(),
                 type:'date',
                 placeholder:'选择日期',
                 readonly:false,
@@ -45,7 +45,7 @@ export default {
                 popperClass:'',
                 pickerOptions:{},
                 rangeSeparator:'-',
-                defaultValue:new Date(),
+                defaultValue:new Date().getTime(),
                 name:"",
                 unlinkPanels:false,
                 validateEvent:true

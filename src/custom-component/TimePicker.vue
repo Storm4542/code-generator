@@ -50,7 +50,7 @@ export default {
                 endPlaceholder:"结束时间",
                 isRange:false,
                 arrowControl:false,
-                valueFormat:'',
+                valueFormat:'HH:mm:ss',
                 defaultValue:new Date(),
                 format:'',
             }
