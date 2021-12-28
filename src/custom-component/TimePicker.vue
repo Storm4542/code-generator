@@ -35,7 +35,7 @@ export default {
             default:{
                 value:'',
                 pickerOptions:{
-                    selectableRange: '18:30:00 - 20:30:00'
+                    selectableRange: '00:00:00 - 23:59:59'
                 },
                 readonly:false,
                 disabled:false,
@@ -51,8 +51,8 @@ export default {
                 isRange:false,
                 arrowControl:false,
                 valueFormat:'HH:mm:ss',
-                defaultValue:new Date(),
-                format:'',
+                defaultValue:new Date().getTime(),
+                format:'HH:mm:ss',
             }
         },
         events: {

@@ -558,7 +558,7 @@ const list = [
         name: 'TimeSelect',
         id: '10',
         propsValue: {
-            value: new Date(),
+            value: '',
             pickerOptions: {
                 start: '08:30',
                 step: '00:15',
@@ -595,7 +595,7 @@ const list = [
         propsValue: {
             value: '',
             pickerOptions: {
-                selectableRange: '18:30:00 - 20:30:00'
+                selectableRange: '00:00:00 - 23:59:59'
             },
             readonly: false,
             disabled: false,
@@ -611,8 +611,8 @@ const list = [
             isRange: false,
             arrowControl: false,
             valueFormat: 'HH:mm:ss',
-            defaultValue: new Date(),
-            format: 'yyyy-MM-dd',
+            defaultValue: new Date().getTime(),
+            format: 'HH:mm:ss',
         },
         style: {
             left: '',
