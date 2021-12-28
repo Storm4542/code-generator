@@ -139,7 +139,6 @@ export default {
             this.$store.commit('rightBottom');
         },
         lock() {
-            ``;
             this.$store.commit('lock');
         },
 

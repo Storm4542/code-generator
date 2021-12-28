@@ -1,6 +1,9 @@
 <template>
-    <div class="shape" :class="{ active }" @click="selectCurComponent" @mousedown="handleMouseDownOnShape">
-        <span class="iconfont icon-xiangyouxuanzhuan" v-show="isActive()" @mousedown="handleRotate"></span>
+    <div class="shape" :class="{ active }" @click="selectCurComponent" @mousedown="handleMouseDownOnShape"
+         @mousemove="handleMouseMove">
+        <div class="mask_layer"></div>
+
+        <!--        <span class="iconfont icon-xiangyouxuanzhuan" v-show="isActive()" @mousedown="handleRotate"></span>-->
         <span class="iconfont icon-suo" v-show="element.isLock"></span>
         <div
             class="shape-point"
@@ -10,6 +13,8 @@
             :style="getPointStyle(item)">
         </div>
         <slot></slot>
+
+
     </div>
 </template>
 
@@ -131,7 +136,9 @@ export default {
         },
 
         getPointStyle(point) {
+            console.log('point', point);
             const {width, height} = this.defaultStyle;
+            console.log(this.defaultStyle);
             const hasT = /t/.test(point);
             const hasB = /b/.test(point);
             const hasL = /l/.test(point);
@@ -196,7 +203,14 @@ export default {
 
             return result;
         },
+        handleMouseMove(e) {
+            //鼠标进入时候，添加遮罩层，不能点击组件
 
+
+            const element = e.path.find(dom => dom.className.includes('shape'));
+            // console.log('handleMouseMove', element);
+            // element.styles.add('mask-layer');
+        },
         handleMouseDownOnShape(e) {
             console.group('handleMouseDownOnShape:start', e);
             this.$store.commit('setClickComponentStatus', true);
@@ -358,9 +372,19 @@ export default {
 .shape {
     position: absolute;
 
+
     &:hover {
         cursor: move;
     }
+}
+
+//遮罩层
+.mask_layer {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
 }
 
 .active {
@@ -376,6 +400,7 @@ export default {
     height: 8px;
     border-radius: 50%;
     z-index: 1;
+
 }
 
 .icon-xiangyouxuanzhuan {
@@ -383,12 +408,10 @@ export default {
     top: -34px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 16px;
     font-weight: 600;
     cursor: grab;
     color: #59c7f9;
     font-size: 20px;
-    font-weight: 600;
 
     &:active {
         cursor: grabbing;
@@ -400,4 +423,6 @@ export default {
     top: 0;
     right: 0;
 }
+
+
 </style>

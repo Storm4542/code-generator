@@ -20,6 +20,7 @@
                :element="item"
                :index="index"
                :class="{ lock: item.isLock }"
+
         >
             <component
                 class="component"
@@ -161,7 +162,6 @@ export default {
             document.addEventListener('mousemove', move);
             document.addEventListener('mouseup', up);
         },
-
         hideArea() {
             this.isShowArea = 0;
             this.width = 0;
@@ -311,6 +311,8 @@ export default {
     position: relative;
     background: #fff;
     margin: auto;
+
+
 
     .lock {
         opacity: .5;
