@@ -17,6 +17,10 @@
             <el-button @click="unlock" :disabled="!curComponent || !curComponent.isLock">解锁</el-button>
             <el-button @click="horizontalCenter">水平居中</el-button>
             <el-button @click="verticalCenter">垂直居中</el-button>
+            <el-button @click="leftTop">左上角</el-button>
+            <el-button @click="rightTop">右上角</el-button>
+            <el-button @click="rightBottom">右下角</el-button>
+            <el-button @click="leftBottom">左下角</el-button>
             <div class="canvas-config">
                 <span>画布大小</span>
                 <input v-model="canvasStyleData.width">
@@ -118,7 +122,24 @@ export default {
             //    垂直居中
             this.$store.commit('verticalCenter');
         },
+        leftTop() {
+            //    垂直居中
+            this.$store.commit('leftTop');
+        },
+        rightTop() {
+            //    垂直居中
+            this.$store.commit('rightTop');
+        },
+        leftBottom() {
+            //    垂直居中
+            this.$store.commit('leftBottom');
+        },
+        rightBottom() {
+            //    垂直居中
+            this.$store.commit('rightBottom');
+        },
         lock() {
+            ``;
             this.$store.commit('lock');
         },
 
