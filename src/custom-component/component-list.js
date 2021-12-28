@@ -39,8 +39,8 @@ const list = [
             right: '',
             top: '',
             bottom: '',
-            width:'140',
-            height:'40',
+            width: '140',
+            height: '40',
         },
         events: {
             change: () => {console.log('默认change');},
@@ -92,8 +92,8 @@ const list = [
             right: '',
             top: '',
             bottom: '',
-            width:'500',
-            height:'400',
+            width: '500',
+            height: '400',
         },
 
     },
@@ -128,8 +128,8 @@ const list = [
             right: '',
             top: '',
             bottom: '',
-            width:'300',
-            height:'40',
+            width: '300',
+            height: '40',
         },
         events: {
             change: () => {console.log('默认change');},
@@ -168,8 +168,8 @@ const list = [
             right: '',
             top: '',
             bottom: '',
-            width:'300',
-            height:'40',
+            width: '300',
+            height: '40',
         },
         events: {
             change: (value) => {console.log(`change:正在输入${value}`);},
@@ -195,8 +195,8 @@ const list = [
             right: '',
             top: '',
             bottom: '',
-            width:'180',
-            height:'40',
+            width: '180',
+            height: '40',
         },
         events: {
             change: (value) => {console.log(`change:正在输入${value}`);},
@@ -206,51 +206,51 @@ const list = [
         name: 'Select',
         id: '6',
         propsValue: {
-            value:'',
+            value: '',
             options: [
                 {
-                value: '选项1',
-                label: '黄金糕'
+                    value: '选项1',
+                    label: '黄金糕'
                 }, {
-                value: '选项2',
-                label: '双皮奶'
+                    value: '选项2',
+                    label: '双皮奶'
                 }, {
-                value: '选项3',
-                label: '蚵仔煎'
+                    value: '选项3',
+                    label: '蚵仔煎'
                 }, {
-                value: '选项4',
-                label: '龙须面'
+                    value: '选项4',
+                    label: '龙须面'
                 }, {
-                value: '选项5',
-                label: '北京烤鸭'
+                    value: '选项5',
+                    label: '北京烤鸭'
                 }
             ],
-            multiple:false,
-            disabled:false,
-            clearable:true,
-            multipleLimit:0,
-            autocomplete:'off',
-            placeholder:'请选择',
-            filterable:false,
-            filterMethod:function (params) {
+            multiple: false,
+            disabled: false,
+            clearable: true,
+            multipleLimit: 0,
+            autocomplete: 'off',
+            placeholder: '请选择',
+            filterable: false,
+            filterMethod: function (params) {
                 console.log(params);
             },
-            remote:false,
-            remoteMethod:function (params) {
+            remote: false,
+            remoteMethod: function (params) {
                 console.log(params);
             },
-            loading:false,
-            loadingText:'加载中',
-            size:'small',
-            allowCreate:false,
+            loading: false,
+            loadingText: '加载中',
+            size: 'small',
+            allowCreate: false,
         },
         style: {
             left: '',
             right: '',
             top: '',
             bottom: '',
-            width:'200',
-            height:'30',
+            width: '200',
+            height: '30',
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -264,7 +264,7 @@ const list = [
         name: 'Cascader',
         id: '7',
         propsValue: {
-            value:[],
+            value: [],
             options: [{
                 value: 'zhinan',
                 label: '指南',
@@ -272,181 +272,181 @@ const list = [
                     value: 'shejiyuanze',
                     label: '设计原则',
                     children: [{
-                    value: 'yizhi',
-                    label: '一致'
+                        value: 'yizhi',
+                        label: '一致'
                     }, {
-                    value: 'fankui',
-                    label: '反馈'
+                        value: 'fankui',
+                        label: '反馈'
                     }, {
-                    value: 'xiaolv',
-                    label: '效率'
+                        value: 'xiaolv',
+                        label: '效率'
                     }, {
-                    value: 'kekong',
-                    label: '可控'
+                        value: 'kekong',
+                        label: '可控'
                     }]
                 }, {
                     value: 'daohang',
                     label: '导航',
                     children: [{
-                    value: 'cexiangdaohang',
-                    label: '侧向导航'
+                        value: 'cexiangdaohang',
+                        label: '侧向导航'
                     }, {
-                    value: 'dingbudaohang',
-                    label: '顶部导航'
+                        value: 'dingbudaohang',
+                        label: '顶部导航'
                     }]
                 }]
-                }, {
+            }, {
                 value: 'zujian',
                 label: '组件',
                 children: [{
                     value: 'basic',
                     label: 'Basic',
                     children: [{
-                    value: 'layout',
-                    label: 'Layout 布局'
+                        value: 'layout',
+                        label: 'Layout 布局'
                     }, {
-                    value: 'color',
-                    label: 'Color 色彩'
+                        value: 'color',
+                        label: 'Color 色彩'
                     }, {
-                    value: 'typography',
-                    label: 'Typography 字体'
+                        value: 'typography',
+                        label: 'Typography 字体'
                     }, {
-                    value: 'icon',
-                    label: 'Icon 图标'
+                        value: 'icon',
+                        label: 'Icon 图标'
                     }, {
-                    value: 'button',
-                    label: 'Button 按钮'
+                        value: 'button',
+                        label: 'Button 按钮'
                     }]
                 }, {
                     value: 'form',
                     label: 'Form',
                     children: [{
-                    value: 'radio',
-                    label: 'Radio 单选框'
+                        value: 'radio',
+                        label: 'Radio 单选框'
                     }, {
-                    value: 'checkbox',
-                    label: 'Checkbox 多选框'
+                        value: 'checkbox',
+                        label: 'Checkbox 多选框'
                     }, {
-                    value: 'input',
-                    label: 'Input 输入框'
+                        value: 'input',
+                        label: 'Input 输入框'
                     }, {
-                    value: 'input-number',
-                    label: 'InputNumber 计数器'
+                        value: 'input-number',
+                        label: 'InputNumber 计数器'
                     }, {
-                    value: 'select',
-                    label: 'Select 选择器'
+                        value: 'select',
+                        label: 'Select 选择器'
                     }, {
-                    value: 'cascader',
-                    label: 'Cascader 级联选择器'
+                        value: 'cascader',
+                        label: 'Cascader 级联选择器'
                     }, {
-                    value: 'switch',
-                    label: 'Switch 开关'
+                        value: 'switch',
+                        label: 'Switch 开关'
                     }, {
-                    value: 'slider',
-                    label: 'Slider 滑块'
+                        value: 'slider',
+                        label: 'Slider 滑块'
                     }, {
-                    value: 'time-picker',
-                    label: 'TimePicker 时间选择器'
+                        value: 'time-picker',
+                        label: 'TimePicker 时间选择器'
                     }, {
-                    value: 'date-picker',
-                    label: 'DatePicker 日期选择器'
+                        value: 'date-picker',
+                        label: 'DatePicker 日期选择器'
                     }, {
-                    value: 'datetime-picker',
-                    label: 'DateTimePicker 日期时间选择器'
+                        value: 'datetime-picker',
+                        label: 'DateTimePicker 日期时间选择器'
                     }, {
-                    value: 'upload',
-                    label: 'Upload 上传'
+                        value: 'upload',
+                        label: 'Upload 上传'
                     }, {
-                    value: 'rate',
-                    label: 'Rate 评分'
+                        value: 'rate',
+                        label: 'Rate 评分'
                     }, {
-                    value: 'form',
-                    label: 'Form 表单'
+                        value: 'form',
+                        label: 'Form 表单'
                     }]
                 }, {
                     value: 'data',
                     label: 'Data',
                     children: [{
-                    value: 'table',
-                    label: 'Table 表格'
+                        value: 'table',
+                        label: 'Table 表格'
                     }, {
-                    value: 'tag',
-                    label: 'Tag 标签'
+                        value: 'tag',
+                        label: 'Tag 标签'
                     }, {
-                    value: 'progress',
-                    label: 'Progress 进度条'
+                        value: 'progress',
+                        label: 'Progress 进度条'
                     }, {
-                    value: 'tree',
-                    label: 'Tree 树形控件'
+                        value: 'tree',
+                        label: 'Tree 树形控件'
                     }, {
-                    value: 'pagination',
-                    label: 'Pagination 分页'
+                        value: 'pagination',
+                        label: 'Pagination 分页'
                     }, {
-                    value: 'badge',
-                    label: 'Badge 标记'
+                        value: 'badge',
+                        label: 'Badge 标记'
                     }]
                 }, {
                     value: 'notice',
                     label: 'Notice',
                     children: [{
-                    value: 'alert',
-                    label: 'Alert 警告'
+                        value: 'alert',
+                        label: 'Alert 警告'
                     }, {
-                    value: 'loading',
-                    label: 'Loading 加载'
+                        value: 'loading',
+                        label: 'Loading 加载'
                     }, {
-                    value: 'message',
-                    label: 'Message 消息提示'
+                        value: 'message',
+                        label: 'Message 消息提示'
                     }, {
-                    value: 'message-box',
-                    label: 'MessageBox 弹框'
+                        value: 'message-box',
+                        label: 'MessageBox 弹框'
                     }, {
-                    value: 'notification',
-                    label: 'Notification 通知'
+                        value: 'notification',
+                        label: 'Notification 通知'
                     }]
                 }, {
                     value: 'navigation',
                     label: 'Navigation',
                     children: [{
-                    value: 'menu',
-                    label: 'NavMenu 导航菜单'
+                        value: 'menu',
+                        label: 'NavMenu 导航菜单'
                     }, {
-                    value: 'tabs',
-                    label: 'Tabs 标签页'
+                        value: 'tabs',
+                        label: 'Tabs 标签页'
                     }, {
-                    value: 'breadcrumb',
-                    label: 'Breadcrumb 面包屑'
+                        value: 'breadcrumb',
+                        label: 'Breadcrumb 面包屑'
                     }, {
-                    value: 'dropdown',
-                    label: 'Dropdown 下拉菜单'
+                        value: 'dropdown',
+                        label: 'Dropdown 下拉菜单'
                     }, {
-                    value: 'steps',
-                    label: 'Steps 步骤条'
+                        value: 'steps',
+                        label: 'Steps 步骤条'
                     }]
                 }, {
                     value: 'others',
                     label: 'Others',
                     children: [{
-                    value: 'dialog',
-                    label: 'Dialog 对话框'
+                        value: 'dialog',
+                        label: 'Dialog 对话框'
                     }, {
-                    value: 'tooltip',
-                    label: 'Tooltip 文字提示'
+                        value: 'tooltip',
+                        label: 'Tooltip 文字提示'
                     }, {
-                    value: 'popover',
-                    label: 'Popover 弹出框'
+                        value: 'popover',
+                        label: 'Popover 弹出框'
                     }, {
-                    value: 'card',
-                    label: 'Card 卡片'
+                        value: 'card',
+                        label: 'Card 卡片'
                     }, {
-                    value: 'carousel',
-                    label: 'Carousel 走马灯'
+                        value: 'carousel',
+                        label: 'Carousel 走马灯'
                     }, {
-                    value: 'collapse',
-                    label: 'Collapse 折叠面板'
+                        value: 'collapse',
+                        label: 'Collapse 折叠面板'
                     }]
                 }]
-                }, {
+            }, {
                 value: 'ziyuan',
                 label: '资源',
                 children: [{
@@ -460,29 +460,29 @@ const list = [
                     label: '组件交互文档'
                 }]
             }],
-            disabled:false,
-            clearable:true,
-            size:'small',
-            showAllLevels:true,
-            collapseTags:false,
-            separator:'/',
-            placeholder:'请选择',
-            filterable:false,
-            filterMethod:function (params,keyword) {
-                console.log(params,keyword);
+            disabled: false,
+            clearable: true,
+            size: 'small',
+            showAllLevels: true,
+            collapseTags: false,
+            separator: '/',
+            placeholder: '请选择',
+            filterable: false,
+            filterMethod: function (params, keyword) {
+                console.log(params, keyword);
             },
-            beforeFilter:function (params) {
+            beforeFilter: function (params) {
                 console.log(params);
             },
-            debounce:0,
+            debounce: 0,
         },
         style: {
             left: '',
             right: '',
             top: '',
             bottom: '',
-            width:'200',
-            height:'30',
+            width: '200',
+            height: '30',
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -496,23 +496,23 @@ const list = [
         name: 'Switches',
         id: '8',
         propsValue: {
-            value:true,
-            activeColor:"#13ce66",
-            inactiveColor:"#ff4949",
-            activeText:'右',
-            inactiveText:'左',
-            activeValue:"100",
-            inactiveValue:"0",
-            disabled:false,
-            width:40,
+            value: true,
+            activeColor: "#13ce66",
+            inactiveColor: "#ff4949",
+            activeText: '右',
+            inactiveText: '左',
+            activeValue: "100",
+            inactiveValue: "0",
+            disabled: false,
+            width: 40,
         },
         style: {
             left: '',
             right: '',
             top: '',
             bottom: '',
-            width:'140',
-            height:'40',
+            width: '140',
+            height: '40',
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -522,33 +522,33 @@ const list = [
         name: 'Slider',
         id: '9',
         propsValue: {
-            value:0,
-            min:0,
-            max:100,
-            disabled:false,
-            step:1,
-            showInput:false,
-            showInputControls:true,
-            inputSize:'small',
-            showStops:false,
-            showTooltip:true,
-            formatTooltip:function (params) {
+            value: 0,
+            min: 0,
+            max: 100,
+            disabled: false,
+            step: 1,
+            showInput: false,
+            showInputControls: true,
+            inputSize: 'small',
+            showStops: false,
+            showTooltip: true,
+            formatTooltip: function (params) {
                 console.log(params);
             },
-            range:false,
-            vertical:false,
-            height:'',
-            label:'',
-            debounce:300,
-            tooltipClass:''
+            range: false,
+            vertical: false,
+            height: '',
+            label: '',
+            debounce: 300,
+            tooltipClass: ''
         },
         style: {
             left: '',
             right: '',
             top: '',
             bottom: '',
-            width:'200',
-            height:'40',
+            width: '200',
+            height: '40',
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -558,30 +558,30 @@ const list = [
         name: 'TimeSelect',
         id: '10',
         propsValue: {
-            value:'',
-            pickerOptions:{
+            value: new Date(),
+            pickerOptions: {
                 start: '08:30',
                 step: '00:15',
                 end: '18:30',
                 minTime: '',
             },
-            readonly:false,
-            disabled:false,
-            editable:true,
-            clearable:true,
-            size:'small',
-            placeholder:'请选择',
-            align:"center",
-            popperClass:'',
-            rangeSeparator:'-',
+            readonly: false,
+            disabled: false,
+            editable: true,
+            clearable: true,
+            size: 'small',
+            placeholder: '请选择',
+            align: "center",
+            popperClass: '',
+            rangeSeparator: '-',
         },
         style: {
             left: '',
             right: '',
             top: '',
             bottom: '',
-            width:'300',
-            height:'38',
+            width: '300',
+            height: '38',
         },
         events: {
             change: () => {console.log('默认change');},
@@ -593,34 +593,34 @@ const list = [
         name: 'TimePicker',
         id: '11',
         propsValue: {
-            value:'',
-            pickerOptions:{
+            value: '',
+            pickerOptions: {
                 selectableRange: '18:30:00 - 20:30:00'
             },
-            readonly:false,
-            disabled:false,
-            editable:true,
-            clearable:true,
-            size:'small',
-            placeholder:'请选择',
-            align:"center",
-            popperClass:'',
-            rangeSeparator:'-',
-            startPlaceholder:"开始时间",
-            endPlaceholder:"结束时间",
-            isRange:false,
-            arrowControl:false,
-            valueFormat:'',
-            defaultValue:new Date(),
-            format:'',
+            readonly: false,
+            disabled: false,
+            editable: true,
+            clearable: true,
+            size: 'small',
+            placeholder: '请选择',
+            align: "center",
+            popperClass: '',
+            rangeSeparator: '-',
+            startPlaceholder: "开始时间",
+            endPlaceholder: "结束时间",
+            isRange: false,
+            arrowControl: false,
+            valueFormat: '',
+            defaultValue: new Date(),
+            format: '',
         },
         style: {
             left: '',
             right: '',
             top: '',
             bottom: '',
-            width:'300',
-            height:'38',
+            width: '300',
+            height: '38',
         },
         events: {
             change: () => {console.log('默认change');},
@@ -632,33 +632,33 @@ const list = [
         name: 'DatePicker',
         id: '12',
         propsValue: {
-            value:'',
-            type:'date',
-            placeholder:'选择日期',
-            readonly:false,
-            disabled:false,
-            editable:true,
-            clearable:true,
-            size:"",
-            startPlaceholder:'开始日期',
-            endPlaceholder:'结束日期',
-            format:'yyyy-MM-dd',
-            align:"left",
-            popperClass:'',
-            pickerOptions:{},
-            rangeSeparator:'-',
-            defaultValue:new Date(),
-            name:"",
-            unlinkPanels:false,
-            validateEvent:true
+            value: '',
+            type: 'date',
+            placeholder: '选择日期',
+            readonly: false,
+            disabled: false,
+            editable: true,
+            clearable: true,
+            size: "",
+            startPlaceholder: '开始日期',
+            endPlaceholder: '结束日期',
+            format: 'yyyy-MM-dd',
+            align: "left",
+            popperClass: '',
+            pickerOptions: {},
+            rangeSeparator: '-',
+            defaultValue: new Date(),
+            name: "",
+            unlinkPanels: false,
+            validateEvent: true
         },
         style: {
             left: '',
             right: '',
             top: '',
             bottom: '',
-            width:'300',
-            height:'38',
+            width: '300',
+            height: '38',
         },
         events: {
             change: () => {console.log('默认change');},
@@ -706,18 +706,18 @@ const list = [
         name: 'EButton',
         component: 'e-button',
         label: 'E按钮',
-        propsValue:{
-            type:"primary ",
-            value:"按钮",
-            size:"",
-            plain:false,
-            round:false,
-            circle:false,
-            loading:false,
-            disabled:false,
-            icon:"",
-            autofocus:false,
-            nativeType:"button"
+        propsValue: {
+            type: "primary ",
+            value: "按钮",
+            size: "",
+            plain: false,
+            round: false,
+            circle: false,
+            loading: false,
+            disabled: false,
+            icon: "",
+            autofocus: false,
+            nativeType: "button"
         },
         // propValue: 'E按钮',
         icon: 'button',

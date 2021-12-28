@@ -1,7 +1,7 @@
 <template>
     <div class="shape" :class="{ active }" @click="selectCurComponent" @mousedown="handleMouseDownOnShape"
          @mousemove="handleMouseMove">
-        <div class="mask_layer"></div>
+<!--        <div class="mask_layer"></div>-->
 
         <!--        <span class="iconfont icon-xiangyouxuanzhuan" v-show="isActive()" @mousedown="handleRotate"></span>-->
         <span class="iconfont icon-suo" v-show="element.isLock"></span>
