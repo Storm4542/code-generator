@@ -612,7 +612,7 @@ const list = [
             arrowControl: false,
             valueFormat: '',
             defaultValue: new Date(),
-            format: '',
+            format: 'yyyy-MM-dd',
         },
         style: {
             left: '',
@@ -632,7 +632,7 @@ const list = [
         name: 'DatePicker',
         id: '12',
         propsValue: {
-            value: '',
+            value: new Date().getTime(),
             type: 'date',
             placeholder: '选择日期',
             readonly: false,
@@ -647,7 +647,7 @@ const list = [
             popperClass: '',
             pickerOptions: {},
             rangeSeparator: '-',
-            defaultValue: new Date(),
+            defaultValue: new Date().getTime(),
             name: "",
             unlinkPanels: false,
             validateEvent: true

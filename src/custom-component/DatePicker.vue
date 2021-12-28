@@ -30,7 +30,7 @@ export default {
         propsValue:{
             type:Object,
             default:{
-                value:'',
+                value:new Date(),
                 type:'date',
                 placeholder:'选择日期',
                 readonly:false,
