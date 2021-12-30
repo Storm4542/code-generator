@@ -706,17 +706,17 @@ const list = [
         name: 'Button',
         id: '14',
         propsValue: {
-            value:"按钮",
-            type:'primary',
-            size:'medium',
-            plain:false,
-            round:false,
-            circle:false,
-            loading:false,
-            disabled:false,
-            icon:'',
-            autofocus:false,
-            nativeType:'button',
+            value: "按钮",
+            type: 'primary',
+            size: 'medium',
+            plain: false,
+            round: false,
+            circle: false,
+            loading: false,
+            disabled: false,
+            icon: '',
+            autofocus: false,
+            nativeType: 'button',
         },
         style: {
             left: '',
@@ -725,6 +725,27 @@ const list = [
             bottom: '',
             width: '200',
             height: '40',
+        },
+        events: {
+            change: () => {console.log('默认change');},
+            blur: () => {console.log('blur');},
+            focus: () => {console.log('focus');},
+        }
+    },
+    {
+        name: 'Form',
+        id: '15',
+        propsValue: {
+            ref: 'form',
+            labelWidth: '80px'
+        },
+        style: {
+            left: '',
+            right: '',
+            top: '',
+            bottom: '',
+            width: '300',
+            height: '500',
         },
         events: {
             change: () => {console.log('默认change');},

@@ -1,13 +1,9 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
-const components = [
-    'Picture',
-    'VText',
-    'VButton',
-    'Group',
-    'RectShape',
-    'EButton',
+const Table = [
     'Table',
+];
+const Form = [
     'Radio',
     'Checkbox',
     'InputNumber',
@@ -18,9 +14,20 @@ const components = [
     'TimePicker',
     'DatePicker',
     'DateTimePicker',
-    'Button'
-]
-
-components.forEach(key => {
-    Vue.component(key, () => import(`@/custom-component/${key}`))
-})
+    'Button',
+    'Form'
+];
+const Origin = [
+    'Picture',
+    'VText',
+    'VButton',
+    'Group',
+    'RectShape',
+    'EButton',
+];
+Form.forEach(key => {
+    Vue.component(key, () => import(`@/custom-component/Form/${key}`));
+});
+Table.forEach(key => {
+    Vue.component(key, () => import(`@/custom-component/Table/${key}`));
+});
