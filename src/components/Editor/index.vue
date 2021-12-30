@@ -52,15 +52,15 @@ import Area from './Area';
 import eventBus from '@/utils/eventBus';
 import Grid from './Grid';
 import {changeStyleWithScale} from '@/utils/translate';
-import Input from '@/custom-component/Input';
-import Table from '@/custom-component/Table';
-import Radio from '@/custom-component/Radio';
-import Checkbox from '@/custom-component/Checkbox';
-import InputNumber from '@/custom-component/InputNumber';
-import Select from '@/custom-component/Select';
-import Cascader from '@/custom-component/Cascader';
-import Switches from '@/custom-component/Switch';
-import Slider from '@/custom-component/Slider';
+import Input from '@/custom-component/Form/Input';
+import Table from '@/custom-component/Table/Table';
+import Radio from '@/custom-component/Form/Radio';
+import Checkbox from '@/custom-component/Form/Checkbox';
+import InputNumber from '@/custom-component/Form/InputNumber';
+import Select from '@/custom-component/Form/Select';
+import Cascader from '@/custom-component/Form/Cascader';
+import Switches from '@/custom-component/Form/Switch';
+import Slider from '@/custom-component/Form/Slider';
 
 export default {
     props: {
