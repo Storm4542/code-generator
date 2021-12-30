@@ -667,6 +667,42 @@ const list = [
         }
     },
     {
+        name: 'DateTimePicker',
+        id: '13',
+        propsValue: {
+            value:new Date().getTime(),
+            type:'datetime',
+            placeholder:'选择日期时间',
+            readonly:false,
+            disabled:false,
+            editable:true,
+            clearable:true,
+            size:'small',
+            startPlaceholder:'开始时间',
+            endPlaceholder:'结束时间',
+            timeArrowControl:false,
+            format:'yyyy-MM-dd HH:mm:ss',
+            align:'left',
+            popperClass:'',
+            rangeSeparator:"-",
+            defaultValue:new Date().getTime(),
+            unlinkPanels:false,
+        },
+        style: {
+            left: '',
+            right: '',
+            top: '',
+            bottom: '',
+            width: '300',
+            height: '38',
+        },
+        events: {
+            change: () => {console.log('默认change');},
+            blur: () => {console.log('blur');},
+            focus: () => {console.log('focus');},
+        }
+    },
+    {
         component: 'v-text',
         label: '文字',
         propValue: '双击编辑文字',

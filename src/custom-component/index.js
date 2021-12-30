@@ -16,7 +16,8 @@ const components = [
     'Switches',
     'TimeSelect',
     'TimePicker',
-    'DatePicker'
+    'DatePicker',
+    'DateTimePicker'
 ]
 
 components.forEach(key => {
