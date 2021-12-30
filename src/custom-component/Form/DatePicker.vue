@@ -19,6 +19,9 @@
             :name="propsValue.name"
             :unlink-panels="propsValue.unlinkPanels"
             :validate-event="propsValue.validateEvent"
+            @change="events.change"
+            @blur="events.blur"
+            @focus="events.focus"
             >
         </el-date-picker>
     </div>

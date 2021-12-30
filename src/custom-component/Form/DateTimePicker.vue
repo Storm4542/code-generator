@@ -18,6 +18,9 @@
         :range-separator="propsValue.rangeSeparator"
         :default-value="propsValue.defaultValue"
         :unlink-panels="propsValue.unlinkPanels"
+        @change="events.change"
+        @blur="events.blur"
+        @focus="events.focus"
         >
         </el-date-picker>
     </div>

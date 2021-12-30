@@ -702,7 +702,6 @@ const list = [
             focus: () => {console.log('focus');},
         }
     },
-
     {
         name: 'Button',
         id: '14',

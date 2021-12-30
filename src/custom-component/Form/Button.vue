@@ -11,6 +11,7 @@
             :icon="propsValue.icon"
             :autofocus="propsValue.autofocus"
             :native-type="propsValue.nativeType"
+            @click="events.click"
         >
             {{ propsValue.value }}
         </el-button>
