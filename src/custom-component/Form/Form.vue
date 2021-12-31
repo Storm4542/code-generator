@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color: red">
+    <div style="background-color: #FFF">
         <el-form :ref="propsValue.ref" :label-width="propsValue.labelWidth" :style="innerStyle">
 
         </el-form>
@@ -19,10 +19,11 @@ export default {
         },
         innerStyle: {
             type: Object,
-            default: {
-                width: '200px',
-                height: '100px',
-                backgroundColor: 'blue'
+            default: () => {
+                return {
+                    width: '200px',
+                    height: '100px',
+                };
             }
         }
     }

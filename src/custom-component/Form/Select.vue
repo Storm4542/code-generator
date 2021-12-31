@@ -21,60 +21,60 @@
             :remote="propsValue.remote"
             :loading="propsValue.loading"
             :loading-text="propsValue.loadingText"
-            >
+        >
             <el-option
-            v-for="(item,index) in propsValue.options"
-            :key="index"
-            :label="item.label"
-            :value="item.value">
+                v-for="(item,index) in propsValue.options"
+                :key="index"
+                :label="item.label"
+                :value="item.value">
             </el-option>
         </el-select>
     </div>
 </template>
 <script>
 export default {
-    name:'Select',
-    props:{
-        propsValue:{
-            type:Object,
-            default:{
-                value:'',
+    name: 'Select',
+    props: {
+        propsValue: {
+            type: Object,
+            default: {
+                value: '',
                 options: [
                     {
-                    value: '选项1',
-                    label: '黄金糕'
+                        value: '选项1',
+                        label: '黄金糕'
                     }, {
-                    value: '选项2',
-                    label: '双皮奶'
+                        value: '选项2',
+                        label: '双皮奶'
                     }, {
-                    value: '选项3',
-                    label: '蚵仔煎'
+                        value: '选项3',
+                        label: '蚵仔煎'
                     }, {
-                    value: '选项4',
-                    label: '龙须面'
+                        value: '选项4',
+                        label: '龙须面'
                     }, {
-                    value: '选项5',
-                    label: '北京烤鸭'
+                        value: '选项5',
+                        label: '北京烤鸭'
                     }
                 ],
-                multiple:false,
-                disabled:false,
-                clearable:true,
-                multipleLimit:0,
-                autocomplete:'off',
-                placeholder:'请选择',
-                filterable:false,
-                filterMethod:function (params) {
+                multiple: false,
+                disabled: false,
+                clearable: true,
+                multipleLimit: 0,
+                autocomplete: 'off',
+                placeholder: '请选择',
+                filterable: false,
+                filterMethod: function (params) {
                     console.log(params);
                 },
-                remote:false,
-                remoteMethod:function (params) {
+                remote: false,
+                remoteMethod: function (params) {
                     console.log(params);
                 },
-                loading:false,
-                loadingText:'加载中',
-                size:'small',
-                allowCreate:false,
+                loading: false,
+                loadingText: '加载中',
+                size: 'small',
+                allowCreate: false,
             }
         },
 
@@ -91,5 +91,5 @@ export default {
             }
         }
     }
-}
+};
 </script>
