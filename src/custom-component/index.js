@@ -15,7 +15,8 @@ const Form = [
     'DatePicker',
     'DateTimePicker',
     'Button',
-    'Form'
+    'Form',
+    'Upload'
 ];
 const Origin = [
     'Picture',

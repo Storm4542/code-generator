@@ -753,6 +753,43 @@ const list = [
             focus: () => {console.log('focus');},
         }
     },
+    {
+        name: 'Upload',
+        id: '16',
+        propsValue: {
+            action:"",
+            fileList:[],
+            multiple:true,
+            handlePreview:function (file) {
+                console.log(file);
+            },
+            handleRemove:function(file,fileList){
+                console.log(file,fileList);
+            },
+            beforeRemove:function(file,fileList){
+                console.log(file,fileList);
+            },
+            beforeUpload:function(file){
+                console.log(file);
+            },
+            headers:{},
+            data:{},
+            withCredentials:false,
+            showFileList:true,
+            drag:false,
+        },
+        style: {
+            left: '',
+            right: '',
+            top: '',
+            bottom: '',
+            width: '300',
+            height: '500',
+        },
+        events: {
+            click: () => {console.log('默认click');},
+        }
+    },
     // {
     //     component: 'v-text',
     //     label: '文字',
