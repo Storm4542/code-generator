@@ -26,9 +26,15 @@ const Origin = [
     'RectShape',
     'EButton',
 ];
+const Echarts = [
+    'category'
+];
 Form.forEach(key => {
     Vue.component(key, () => import(`@/custom-component/Form/${key}`));
 });
 Table.forEach(key => {
     Vue.component(key, () => import(`@/custom-component/Table/${key}`));
+});
+Echarts.forEach(key => {
+    Vue.component(key, () => import(`@/custom-component/Echarts/${key}`));
 });

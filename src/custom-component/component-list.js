@@ -740,6 +740,7 @@ const list = [
             ref: 'form',
             labelWidth: '80px'
         },
+        innerStyle: {},
         style: {
             left: '',
             right: '',
@@ -749,7 +750,9 @@ const list = [
             height: '500',
         },
         events: {
-            change: () => {console.log('默认change');},
+            change: {
+
+            },
             blur: () => {console.log('blur');},
             focus: () => {console.log('focus');},
         }
@@ -758,26 +761,26 @@ const list = [
         name: 'Upload',
         id: '16',
         propsValue: {
-            action:"",
-            fileList:[],
-            multiple:true,
-            handlePreview:function (file) {
+            action: "",
+            fileList: [],
+            multiple: true,
+            handlePreview: function (file) {
                 console.log(file);
             },
-            handleRemove:function(file,fileList){
-                console.log(file,fileList);
+            handleRemove: function (file, fileList) {
+                console.log(file, fileList);
             },
-            beforeRemove:function(file,fileList){
-                console.log(file,fileList);
+            beforeRemove: function (file, fileList) {
+                console.log(file, fileList);
             },
-            beforeUpload:function(file){
+            beforeUpload: function (file) {
                 console.log(file);
             },
-            headers:{},
-            data:{},
-            withCredentials:false,
-            showFileList:true,
-            drag:false,
+            headers: {},
+            data: {},
+            withCredentials: false,
+            showFileList: true,
+            drag: false,
         },
         style: {
             left: '',
@@ -790,6 +793,37 @@ const list = [
         events: {
             click: () => {console.log('默认click');},
         }
+    },
+    {
+        name: 'category',
+        id: '17',
+        propsValue: {
+            elementId: "main123",
+            option: {
+                xAxis: {
+                    type: 'category',
+                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        data: [150, 230, 224, 218, 135, 147, 260],
+                        type: 'line'
+                    }
+                ]
+            }
+        },
+        style: {
+            left: '',
+            right: '',
+            top: '',
+            bottom: '',
+            width: '300',
+            height: '500',
+        },
+
     },
     // {
     //     component: 'v-text',
