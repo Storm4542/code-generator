@@ -16,45 +16,39 @@
             </section>
             <!-- 右侧属性列表 -->
             <section class="right">
-                <el-tabs v-model="activeName">
-                    <el-tab-pane label="属性" name="attr">
-                        <AttrList v-if="curComponent"/>
-                        <p v-else class="placeholder">请选择组件</p>
-                    </el-tab-pane>
-                    <el-tab-pane label="动画" name="animation">
-                        <AnimationList v-if="curComponent"/>
-                        <p v-else class="placeholder">请选择组件</p>
-                    </el-tab-pane>
-                    <el-tab-pane label="事件" name="events">
-                        <EventList v-if="curComponent"/>
-                        <p v-else class="placeholder">请选择组件</p>
-                    </el-tab-pane>
-                </el-tabs>
+                <right-panel></right-panel>
             </section>
         </main>
     </div>
 </template>
 
 <script>
-import Editor from '@/components/Editor/index';
-import ComponentList from '@/components/ComponentList'; // 左侧列表组件
-import AttrList from '@/components/AttrList'; // 右侧属性列表
-import AnimationList from '@/components/AnimationList'; // 右侧动画列表
-import EventList from '@/components/EventList'; // 右侧事件列表
-import componentList from '@/custom-component/component-list'; // 左侧列表数据
-import Toolbar from '@/components/Toolbar';
-import {deepCopy} from '@/utils/utils';
-import {mapState} from 'vuex';
-import generateID from '@/utils/generateID';
-import {listenGlobalKeyDown} from '@/utils/shortcutKey';
+import Editor from '@/components/Editor/index'
+import ComponentList from '@/components/ComponentList' // 左侧列表组件
+
+import componentList from '@/custom-component/component-list' // 左侧列表数据
+import Toolbar from '@/components/Toolbar'
+import { deepCopy } from '@/utils/utils'
+import { mapState } from 'vuex'
+import generateID from '@/utils/generateID'
+import { listenGlobalKeyDown } from '@/utils/shortcutKey'
+import rightPanel from '@/views/Layout/rightPanel'
+import { getMenuMetaById } from '@/api/system/metaData'
+import { setItem } from '@/utils/safeSettings/auth'
 
 export default {
-    components: {Editor, ComponentList, AttrList, AnimationList, EventList, Toolbar},
+    components: {
+        rightPanel,
+        Editor,
+        ComponentList,
+        Toolbar,
+    },
     data() {
         return {
+            componentList,
             activeName: 'attr',
             reSelectAnimateIndex: undefined,
-        };
+        }
     },
     computed: mapState([
         'componentData',
@@ -63,81 +57,119 @@ export default {
         'canvasStyleData',
         'editor',
     ]),
+
     created() {
-        this.restore();
+        this.restore()
         // 全局监听按键事件
-        listenGlobalKeyDown();
+        listenGlobalKeyDown()
     },
     methods: {
         restore() {
             // 用保存的数据恢复画布
-            if (localStorage.getItem('canvasData')) {
-                this.$store.commit('setComponentData', this.resetID(JSON.parse(localStorage.getItem('canvasData'))));
+            const { metaMenuId, projectId } = this.$route.query
+            setItem('projectId', projectId)
+            setItem('metaMenuId', metaMenuId)
+            if (metaMenuId && projectId) {
+                getMenuMetaById({
+                    id: metaMenuId,
+                })
+                    .then(r => {
+                        this.$store.commit('setComponentData', JSON.parse((r.data.metaData)))
+                        this.$store.commit('calculateComponentType')
+                    })
             }
+            // if (localStorage.getItem('canvasData')) {
+            //     this.$store.commit('setComponentData', JSON.parse(localStorage.getItem('canvasData')))
+            //     this.$store.commit('calculateComponentType')
+            //
+            // }
 
             if (localStorage.getItem('canvasStyle')) {
-                this.$store.commit('setCanvasStyle', JSON.parse(localStorage.getItem('canvasStyle')));
+                this.$store.commit('setCanvasStyle', JSON.parse(localStorage.getItem('canvasStyle')))
             }
         },
 
         resetID(data) {
             data.forEach(item => {
-                item.id = generateID();
-            });
+                item.id = generateID(item.name)
+            })
 
-            return data;
+            return data
         },
 
         handleDrop(e) {
-            console.group('handleDrop:start');
-            e.preventDefault();
-            e.stopPropagation();
-            const index = e.dataTransfer.getData('index');
-            const rectInfo = this.editor.getBoundingClientRect();
-            console.log('index:', index);
-            console.log('rectInfo:', rectInfo);
+            // console.group('handleDrop:start')
+            e.preventDefault()
+            e.stopPropagation()
+            console.log(e.dataTransfer)
+            const index = e.dataTransfer.getData('id')
+            const rectInfo = this.editor.getBoundingClientRect()
+            // console.log('index:', index)
+            // console.log('rectInfo:', rectInfo)
             if (index) {
-                //todo 计算位置
-                const component = deepCopy(componentList[index]);
-                component.style.top = e.clientY - rectInfo.y;
-                component.style.left = e.clientX - rectInfo.x;
-                component.id = generateID();
-                this.$store.commit('addComponent', {component});
-                this.$store.commit('recordSnapshot');
+                //todo 判断是否在某个容器中
+                //todo 查找方式不对
+                const component = deepCopy(this.componentList.find(item => item.id === index))
+                component.style.top = e.clientY - rectInfo.y
+                component.style.left = e.clientX - rectInfo.x
+                component.id = generateID(component.name)
+                this.$store.commit('addComponent', {
+                    component,
+                })
+                this.$store.dispatch('isComponentInContainer', {
+                    component,
+                    index,
+                })
+                    .then(r => {
+                        console.log(r)
+                    })
+
+                this.$store.commit('recordSnapshot')
             }
-            console.groupEnd();
+            console.groupEnd()
         },
 
         handleDragOver(e) {
-            console.group('handleDragOver:start');
-            e.preventDefault();
-            e.dataTransfer.dropEffect = 'copy';
-            console.groupEnd();
+            console.group('handleDragOver:start')
+            e.preventDefault()
+            e.dataTransfer.dropEffect = 'copy'
+            this.$store.commit('emptyCurComponent')
+            console.groupEnd()
         },
 
         handleMouseDown() {
-            console.group('handleMouseDown:start');
-            this.$store.commit('setClickComponentStatus', false);
-            console.groupEnd();
+            // console.group('handleMouseDown:start')
+            this.$store.commit('setClickComponentStatus', false)
+            // console.groupEnd()
         },
 
         deselectCurComponent(e) {
-            console.group('deselectCurComponent:start:点击画布中的组件');
+            // console.group('deselectCurComponent:start:点击画布中的组件')
 
             if (!this.isClickComponent) {
-                console.log('点击空白画布，将当前组件置空');
-                this.$store.commit('setCurComponent', {component: null, index: null});
+                // console.log('点击空白画布，将当前组件置空')
+                this.$store.commit('setCurComponent', {
+                    component: null,
+                    index: null,
+                })
             }
 
             // 0 左击 1 滚轮 2 右击
             if (e.button != 2) {
-                console.log('滚轮或左键单击组件，隐藏右键菜单');
-                this.$store.commit('hideContextMenu');
+                // console.log('滚轮或左键单击组件，隐藏右键菜单')
+                this.$store.commit('hideContextMenu')
             }
-            console.groupEnd();
+            console.groupEnd()
+            this.$store.dispatch('isComponentInContainer', {
+                component: this.curComponent,
+            })
+                .then(r => {
+                    console.log(r)
+                })
+
         },
     },
-};
+}
 </script>
 
 <style lang="scss">
@@ -152,10 +184,9 @@ export default {
         .left {
             position: absolute;
             height: 100%;
-            width: 200px;
+            width: 210px;
             left: 0;
             top: 0;
-            padding-top: 10px;
         }
 
         .right {
