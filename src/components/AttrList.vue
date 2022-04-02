@@ -8,6 +8,7 @@
                 <el-color-picker v-else-if="key == 'background'" v-model="curComponent.style[key]"></el-color-picker>
                 <el-color-picker v-else-if="key == 'fontSize'" v-model="curComponent.style[key]"></el-color-picker>
                 <el-color-picker v-else-if="key == 'display'" v-model="curComponent.style[key]"></el-color-picker>
+                <el-color-picker v-else-if="key == 'height'" v-model="curComponent.style[key]"></el-color-picker>
                 <el-color-picker v-else-if="key == 'backgroundColor'" v-model="curComponent.style[key]"></el-color-picker>
                 <el-select v-else-if="selectKey.includes(key)" v-model="curComponent.style[key]">
                     <template v-if="key == 'textAlign'">
