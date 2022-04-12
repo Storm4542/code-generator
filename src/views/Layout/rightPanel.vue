@@ -32,6 +32,12 @@
                     <p v-else class="placeholder">请选择组件</p>
                 </el-scrollbar>
             </el-tab-pane>
+             <el-tab-pane label="数据模型" name="data">
+                <el-scrollbar style="height:calc(100vh - 130px);">
+                    <DataList v-if="curComponent && activeName === 'data'"/>
+                    <p v-else class="placeholder">请选择组件</p>
+                </el-scrollbar>
+            </el-tab-pane>
         </el-tabs>
 
 
